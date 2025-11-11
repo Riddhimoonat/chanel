@@ -1,11 +1,12 @@
-import React from 'react'
+import Navbar from "./components/Navbar";
 
-const App = () => {
+function App() {
   return (
-    <div className='flex-center h=[100vh' >
-      <div className='text-6xl text-indigo-300 '>hey theree </div>
+    <div className="min-h-[200vh] bg-[#f8f8f8]">
+      <Navbar />
+     
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
