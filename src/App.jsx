@@ -1,9 +1,13 @@
-import Navbar from "./components/Navbar";
+import Navbar from "./components/navbar/Navbar";
+import Section1 from "./components/section1/Section1";
+import VideoSection from "./components/VideoSection";
 
 function App() {
   return (
-    <div className="min-h-[200vh] bg-[#f8f8f8]">
+    <div>
       <Navbar />
+      <VideoSection />
+      <Section1/>
      
     </div>
   );
