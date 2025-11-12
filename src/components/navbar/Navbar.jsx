@@ -59,7 +59,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center px-10 py-5">
           <div className="w-10"></div>
 
-          <div className="text-5xl font-bold tracking-[0.3em] text-white">
+          <div className="text-5xl ml-20 font-bold tracking-[0.3em] text-white">
             ZUDIO
           </div>
 
