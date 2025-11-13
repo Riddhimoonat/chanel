@@ -10,7 +10,7 @@ function App() {
       <Navbar />
       <VideoSection />
       <Projects />
-    <TextPrize bgImageUrl="https://images.unsplash.com/photo-1693834084392-fa61a52a81c0?auto=format&fit=crop&w=3000&q=100" />
+      <TextPrize bgImageUrl="https://images.unsplash.com/photo-1693834084392-fa61a52a81c0?auto=format&fit=crop&w=3000&q=100" />
 
       <Footer />
     </div>
