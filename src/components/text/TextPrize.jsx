@@ -1,4 +1,4 @@
-import { useRef, useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -9,7 +9,9 @@ const TextPrize = ({ bgImageUrl }) => {
   const textRefs = useRef([]);
 
   const addToRefs = (el) => {
-    if (el && !textRefs.current.includes(el)) textRefs.current.push(el);
+    if (el && !textRefs.current.includes(el)) {
+      textRefs.current.push(el);
+    }
   };
 
   useEffect(() => {
@@ -22,7 +24,6 @@ const TextPrize = ({ bgImageUrl }) => {
       scrollTrigger: {
         trigger: heroRef.current,
         start: "top 85%",
-        end: "bottom 60%",
       },
     });
   }, []);
@@ -37,14 +38,11 @@ const TextPrize = ({ bgImageUrl }) => {
         backgroundPosition: "center",
       }}
     >
-      {/* Subtle dark overlay (NO BLUR — clean & HD) */}
-      <div className="absolute inset-0 bg-black/35"></div>
-
-      {/* Luxury Text Block */}
-      <div className="relative z-10 text-center text-white">
+      {/* TEXT */}
+      <div className="relative text-center text-white">
         <h1
           ref={addToRefs}
-          className="text-6xl font-light tracking-[0.25em] mb-6 leading-tight"
+          className="text-6xl font-light tracking-widest mb-6 leading-tight"
         >
           ELEVATE YOUR STYLE
         </h1>
@@ -53,15 +51,14 @@ const TextPrize = ({ bgImageUrl }) => {
           ref={addToRefs}
           className="text-xl max-w-[650px] mx-auto font-light opacity-90 leading-relaxed"
         >
-          A touch of luxury. A world of elegance.  
+          A touch of luxury. A world of elegance.
           ZUDIO brings fashion that feels effortless and timeless.
         </p>
 
-        {/* Clean luxury button */}
         <button
           ref={addToRefs}
-          className="mt-10 px-12 py-3 text-lg font-medium border border-white/70 rounded-full
-                     hover:bg-white hover:text-black transition-all duration-300 tracking-wide"
+          className="mt-10 px-12 py-3 text-lg font-medium border-none rounded-full
+                     bg-black text-white hover:text-black hover:bg-white transition-all duration-300 tracking-wide"
         >
           DISCOVER MORE
         </button>
