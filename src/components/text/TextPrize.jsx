@@ -5,65 +5,58 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const TextPrize = ({ bgImageUrl }) => {
-  const heroRef = useRef(null);
-  const textRefs = useRef([]);
-
-  const addToRefs = (el) => {
-    if (el && !textRefs.current.includes(el)) {
-      textRefs.current.push(el);
-    }
-  };
+  const refs = useRef([]);
 
   useEffect(() => {
-    gsap.from(textRefs.current, {
-      opacity: 0,
-      y: 40,
-      duration: 1.2,
-      stagger: 0.25,
-      ease: "power3.out",
-      scrollTrigger: {
-        trigger: heroRef.current,
-        start: "top 85%",
-      },
+    refs.current.forEach((el) => {
+      gsap.fromTo(
+        el,
+        { opacity: 0, y: 40 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1.2,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: el,
+            start: "top 85%",
+          },
+        }
+      );
     });
   }, []);
 
+  const addToRefs = (el) => {
+    if (el && !refs.current.includes(el)) refs.current.push(el);
+  };
+
   return (
-    <div
-      ref={heroRef}
-      className="relative w-full h-[85vh] flex flex-col items-center justify-center px-5 overflow-hidden"
+    <section
+      className="w-full h-screen flex items-center justify-center px-8"
       style={{
         backgroundImage: `url(${bgImageUrl})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
     >
-      {/* TEXT */}
-      <div className="relative text-center text-white">
-        <h1
-          ref={addToRefs}
-          className="text-6xl font-light tracking-widest mb-6 leading-tight"
-        >
+      <div className="text-center text-white max-w-2xl space-y-6">
+        <h1 ref={addToRefs} className="text-5xl font-light tracking-wide">
           ELEVATE YOUR STYLE
         </h1>
 
-        <p
-          ref={addToRefs}
-          className="text-xl max-w-[650px] mx-auto font-light opacity-90 leading-relaxed"
-        >
-          A touch of luxury. A world of elegance.
+        <p ref={addToRefs} className="text-lg leading-relaxed opacity-90">
+          A touch of luxury. A world of elegance.  
           ZUDIO brings fashion that feels effortless and timeless.
         </p>
 
         <button
           ref={addToRefs}
-          className="mt-10 px-12 py-3 text-lg font-medium border-none rounded-full
-                     bg-black text-white hover:text-black hover:bg-white transition-all duration-300 tracking-wide"
+          className="px-6 py-3 border border-white rounded-full tracking-wider hover:bg-white hover:text-black transition-all duration-300"
         >
           DISCOVER MORE
         </button>
       </div>
-    </div>
+    </section>
   );
 };
 
