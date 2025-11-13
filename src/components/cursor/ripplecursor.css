@@ -1,4 +1,4 @@
-@keyframes ripple {
+/* @keyframes ripple {
   0% {
     transform: scale(0);
     opacity: 0.4;
@@ -16,14 +16,7 @@
 .animate-ripple {
   position: absolute;
   border-radius: 50%;
-  animation: ripple 1s ease-out forwards;
+  animation: ripple ease-out forwards;
   pointer-events: none;
   mix-blend-mode: screen;
-}
-.fixed {
-  transition: opacity 0.3s ease;
-}
-.hidden {
-  opacity: 0;
-  pointer-events: none;
-}
+} */

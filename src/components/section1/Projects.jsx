@@ -47,7 +47,7 @@ const projects = [
   })
 
   return (
-    <div className='lg:p-4 p-2 mb-[100vh]'>
+    <div className='lg:p-4 p-2 mb-[1vh]'>
       <div className=' pt-[20vh]'>
         <h2 className=' lg:text-[9.5vw] text-7xl uppercase'>ZUDIO</h2>
       </div>
